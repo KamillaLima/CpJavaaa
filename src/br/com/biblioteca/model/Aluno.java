@@ -1,6 +1,8 @@
 package br.com.biblioteca.model;
 
-public class Aluno {
+import br.com.biblioteca.main.Aviso;
+
+public class Aluno implements Aviso{
     private String nome;
     private int matricula;
 
@@ -17,6 +19,10 @@ public class Aluno {
 		return nome;
 	}
 
-
+	@Override
+    public void notificarDisponibilidade(Livro livro) {
+        System.out.println(nome + ",o livro " + livro.getTitulo() + " está disponível!!! Não perca tempo");
+       
+    }
    
 }
